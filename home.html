@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./css/reset.css" />
+    <link rel="stylesheet" href="./css/style.css" />
+    <link rel="icon" href="./img/icon.jpg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bitcount+Grid+Double:wght@100..900&family=Caprasimo&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <title>The Home Of Capybara</title>
+  </head>
+  <body class="background">
+    <header class="searchbar">
+      <a href="./index.html">
+        <img class="logo" src="./img/capyorange.png" alt="logo" />
+      </a>
+      <a href="javascript:void(0);" class="burger-bar" id="burger-icon">
+        <i class="fa fa-bars" style="font-size: 32px; color: #768350"></i>
+      </a>
+      <nav class="navigation">
+        <ul class="nav-ul">
+          <li>
+            <a class="caprasimo-regular tabs" href="./home.html">Home</a>
+          </li>
+          <li><a class="caprasimo-regular" href="./random.html">Random</a></li>
+          <li class="dropdown">
+            <a class="caprasimo-regular dropdown-toggle" href="#">Contacts</a>
+            <ul class="dropdown-menu">
+              <li><a href="mailto:capybara@notReal.com">Mail</a></li>
+              <li><a href="tel:+995555123456">Call</a></li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <section>
+        <div class="bg-img">
+          <div class="fg-txt-div">
+            <h1 class="caprasimo-regular fg-txt">Welcome</h1>
+            <p class="caprasimo-regular fg-txt">TO</p>
+            <p class="caprasimo-regular fg-txt">THE HOME</p>
+            <p class="caprasimo-regular fg-txt">OF</p>
+            <p class="caprasimo-regular fg-txt">CAPYBARA</p>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <p class="title">Capybara, The Largest Rodent</p>
+        <div class="text-container">
+          <p class="text">
+            Capybaras are the largest rodents in the world, native to South
+            America. They are highly social animals, often found in groups near
+            water bodies. Known for their friendly nature, they can be seen
+            lounging in the sun or swimming gracefully.
+          </p>
+          <p class="text">
+            As the name suggests, they are usually found near swamps and water
+            holes. The water provides a refuge from the midday heat. They are
+            excellent swimmers. Capybara’s eyes and ears are positioned high on
+            the head, so they can see and hear easily while swimming. Capybaras
+            also have webbing between their fingers and toes, which helps them
+            paddle. When frightened, they can remain underwater for several
+            minutes.
+          </p>
+          <p class="text">
+            During the dry season—when water holes are few and far between—as
+            many as 30 to 50 capybaras may gather around a single mud puddle.
+            When the rains arrive, the animals break off into smaller groups.
+          </p>
+        </div>
+      </section>
+      <section>
+        <div class="title-box">
+          <p class="title">The Not So Many Kinds Of Capybara</p>
+        </div>
+
+        <div class="container">
+          <div class="box">
+            <img
+              class="capy-img"
+              src="./img/greatcapybarajpg.jpg"
+              alt="great-bara"
+            />
+            <div class="middle">
+              <a href="greatbara.html"
+                ><div class="caprasimo-regular txt">Great Capybara</div></a
+              >
+            </div>
+          </div>
+
+          <div class="box">
+            <img
+              class="capy-img"
+              src="img/lessercapybar1.jpg"
+              alt="lesser-bara"
+            />
+            <div class="middle">
+              <a href="lesserbara.html"
+                ><div class="caprasimo-regular txt">Lesser Capybara</div></a
+              >
+            </div>
+          </div>
+
+          <div class="box">
+            <img
+              class="capy-img"
+              src="./img/albinobara.jpg"
+              alt="albino-bara"
+            />
+            <div class="middle">
+              <a href="albinobara.html"
+                ><div class="caprasimo-regular txt">Albino Capybara</div></a
+              >
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="footer">
+        <p>© 2025 The Home Of Capybara</p>
+        <p>All rights reserved.</p>
+      </div>
+    </footer>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        // Dropdown
+        const dropdown = document.querySelector(".dropdown");
+        const toggle = dropdown.querySelector(".dropdown-toggle");
+        const menu = dropdown.querySelector(".dropdown-menu");
+
+        toggle.addEventListener("click", function (e) {
+          e.preventDefault();
+          dropdown.classList.toggle("open");
+        });
+
+        document.addEventListener("click", function (e) {
+          if (!dropdown.contains(e.target)) {
+            dropdown.classList.remove("open");
+          }
+        });
+
+        // Burger bar
+        const burger = document.getElementById("burger-icon");
+        const navLinks = document.querySelector(".navigation");
+        burger.addEventListener("click", function () {
+          navLinks.classList.toggle("nav-open");
+          burger.classList.toggle("toggle");
+        });
+      });
+    </script>
+  </body>
+</html>

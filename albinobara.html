@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./css/reset.css" />
+    <link rel="stylesheet" href="./css/style.css" />
+    <link rel="icon" href="./img/icon.jpg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bitcount+Grid+Double:wght@100..900&family=Caprasimo&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <title>The Home Of Capybara</title>
+  </head>
+  <body class="background">
+    <header class="searchbar">
+      <a href="./index.html">
+        <img class="logo" src="./img/capyorange.png" alt="logo" />
+      </a>
+      <a href="javascript:void(0);" class="burger-bar" id="burger-icon">
+        <i class="fa fa-bars" style="font-size: 32px; color: #768350"></i>
+      </a>
+      <nav class="navigation">
+        <ul class="nav-ul">
+          <li>
+            <a class="caprasimo-regular tabs" href="./home.html">Home</a>
+          </li>
+          <li><a class="caprasimo-regular" href="./random.html">Random</a></li>
+          <li class="dropdown">
+            <a class="caprasimo-regular dropdown-toggle" href="#">Contacts</a>
+            <ul class="dropdown-menu">
+              <li><a href="mailto:capybara@notReal.com">Mail</a></li>
+              <li><a href="tel:+995555123456">Call</a></li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+    </header>
+
+
+    <main>
+      <section>
+        <p class="title">
+            Lesser Capybara
+        </p>
+        <div class="text-container">
+          <p class="text">
+            Albino animals are very rare and the same is true for albino capybaras.
+            There are two known cases of albino capys, one of those being Biancanieve (Snow White),
+            born on 3rd June 2009 in Uruguay. It’s the first time there has been an albino capybara born in captivity,
+            so keepers paid extra attention to make sure that this adorable creature makes it through safe and sound.
+          </p>
+          <p class="text">  
+            Albino animals have very poor eyesight and are more vulnerable to predators,
+            so in this case it is an advantage to be born in a zoo under the care of humans.
+          </p>
+          <p class="text" >
+             The lesser capybara constitutes the northernmost population of any extant capybara species.
+             Other than the now extinct H. hesperotiganites from Pleistocene California.
+          </p>
+          <p class="text" >
+             While albinism is a genetic condition caused by an absence or deficiency of melanin in animal skin, hair and eyes, it doesn’t actually make an animal white.
+            Albinos have pinkish coloration instead. Their white fur and hair are caused by lack of pigmentation in those areas; their eyes are typically pink as well.
+            This lack of pigmentation makes them more susceptible to sunburns and other types of damage than non-albino animals would be exposed to under similar circumstances because they don’t have any protection against ultraviolet rays like normal animals do with melanin or carotenoids (a type of pigment found in plants).
+          </p>
+          <p class="text" >
+             Albino animals are rare and therefore, they tend to get a lot of attention.
+            Albino Capybaras are no exception!
+          </p>
+          <p class="text" >
+            These cute creatures could make you feel like you’re looking at an albino version of your favorite cartoon character.
+            And if you love animals, especially rodents, then this particular rodent is going to steal your heart like no other pet has before.
+          </p>
+        </div>
+      </section>
+    </main>
+    <footer>
+      <div class="footer">
+        <p>© 2025 The Home Of Capybara</p>
+        <p>All rights reserved.</p>
+      </div>
+    </footer>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        // Dropdown
+        const dropdown = document.querySelector(".dropdown");
+        const toggle = dropdown.querySelector(".dropdown-toggle");
+        const menu = dropdown.querySelector(".dropdown-menu");
+
+        toggle.addEventListener("click", function (e) {
+          e.preventDefault();
+          dropdown.classList.toggle("open");
+        });
+
+        document.addEventListener("click", function (e) {
+          if (!dropdown.contains(e.target)) {
+            dropdown.classList.remove("open");
+          }
+        });
+
+        // Burger bar
+        const burger = document.getElementById("burger-icon");
+        const navLinks = document.querySelector(".navigation");
+        burger.addEventListener("click", function () {
+          navLinks.classList.toggle("nav-open");
+          burger.classList.toggle("toggle");
+        });
+      });
+    </script>
+  </body>
+</html>

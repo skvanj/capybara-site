@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./css/reset.css" />
+    <link rel="stylesheet" href="./css/style.css" />
+    <link rel="icon" href="./img/icon.jpg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bitcount+Grid+Double:wght@100..900&family=Caprasimo&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      #cookie-notice {
+        display: none;
+        position: fixed;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        z-index: 999;
+        max-width: 450px;
+        margin: auto;
+        padding: 0.5rem;
+        border: 1px solid #eee;
+        background-color: #fefefe;
+        box-shadow: 0 0 0.25rem rgba(0, 0, 0, 0.05);
+        font-family: Arial, Helvetica, sans-serif;
+        line-height: 22px;
+        font-size: 15px;
+        text-align: center;
+        color: #555;
+      }
+      .cookie-notice-more {
+        margin: 0 0.25rem;
+        text-decoration-style: dashed;
+        color: inherit;
+      }
+      .cookie-notice-close {
+        padding: 0 0.5rem;
+        border: 1px solid #ddd;
+        border-radius: 0.125rem;
+        line-height: 20px;
+        text-decoration: none;
+        color: #888;
+      }
+      @media only screen and (min-width: 768px) {
+        #cookie-notice {
+          bottom: 1rem;
+          border-radius: 0.25rem;
+        }
+        .cookie-notice-close {
+          float: right;
+        }
+      }
+    </style>
+    <title>The Home Of Capybara</title>
+  </head>
+  <body>
+    <div id="cookie-notice">
+      We use cookies to deliver better experience.
+      <a
+        href="https://about-cookies.eu.org"
+        class="cookie-notice-more"
+        target="_blank"
+        rel="noopener"
+        >More info...</a
+      >
+      <a
+        href="javascript:void(0)"
+        class="cookie-notice-close"
+        onclick="closeCookieNotice()"
+        >OK</a
+      >
+    </div>
+
+    <section>
+      <form class="form-login" action="" id="form-login">
+        <div>
+          <input type="text" id="username" name="usernameField" />
+          <input type="checkbox" id="save" name="check" />
+        </div>
+        <div>
+          <input type="password" id="password" name="passwordField" />
+          <label>
+            <input type="checkbox" id="togglePassword" /> Show Password
+          </label>
+        </div>
+        <button type="submit">Submit</button>
+      </form>
+    </section>
+    <script src=" https://cdn.jsdelivr.net/npm/js-cookie@3.0.5/dist/js.cookie.min.js "></script>
+    <script src="js/script.js"></script>
+
+    <script>
+      function closeCookieNotice() {
+        const nowDate = new Date();
+        const expireDate = new Date(
+          nowDate.setDate(nowDate.getDate() + 30)
+        ).toUTCString();
+        document.cookie =
+          "cookie_notice=0;path=/;expires=" + expireDate + ";SameSite=Lax;";
+        document.getElementById("cookie-notice").style.display = "none";
+      }
+      document.addEventListener("DOMContentLoaded", function () {
+        const cookie_notice = ("; " + document.cookie)
+          .split("; cookie_notice=")
+          .pop()
+          .split(";")[0];
+        if (cookie_notice !== "0") {
+          document.getElementById("cookie-notice").style.display = "block";
+        }
+      });
+    </script>
+  </body>
+</html>
